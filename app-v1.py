@@ -4,6 +4,7 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
+import config as cfg
 
 def generate_response(uploaded_file, openai_api_key, query_text):
     # Load document if file is uploaded
@@ -23,8 +24,8 @@ def generate_response(uploaded_file, openai_api_key, query_text):
     return qa.run(query_text)
 
 # Page title
-st.set_page_config(page_title='🦜🔗 Ask the Doc App')
-st.title('🦜🔗 Ask the Doc App')
+st.set_page_config(page_title='🦜🔗 Ask MKBHD App')
+st.title('🦜🔗 Ask MKBHD App')
 
 # File upload
 uploaded_file = st.file_uploader('Upload an article', type='txt')
